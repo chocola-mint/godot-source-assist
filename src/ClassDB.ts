@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { parser } from '@lezer/cpp';
 import * as lezer from '@lezer/common';
 import * as ParserUtils from './ParserUtils';
+import * as VariantUtils from './VariantUtils';
 
 class FunctionBindInfo {
 	location! : vscode.Range;
@@ -177,7 +178,7 @@ function rebuildClassBindInfo(document : vscode.TextDocument, tree : lezer.Tree)
 														location: range,
 														name: propertyName,
 														codeLensCommand: {
-															title: `var ${propertyName} : TYPE_${propertyVariantTypeName}`,
+															title: `var ${propertyName} : ${VariantUtils.convertEnumNameToBindName(propertyVariantTypeName)}`,
 															command: "editor.action.goToLocations",
 															arguments: [ document.uri, range.start, [ range.start ], "goto", "" ]
 														},
