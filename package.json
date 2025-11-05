@@ -3,7 +3,7 @@
   "displayName": "Godot Source Assist",
   "description": "Extension that provides various tools and hints to make working on the Godot source code easier.",
   "repository": "https://github.com/chocola-mint/godot-source-assist/",
-  "publisher": "ChocolaMint",
+  "publisher": "chocola-mint",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.105.0"
